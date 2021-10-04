@@ -13,15 +13,18 @@
     <title>Entertainment</title>
 </head>
 
+<!--! Add anime section note when they scroll to that part. It breaks up the note. -->
 <!-- <section>
     <div id="boxes">
         <div id="dialog" class="window">
             &nbsp;The page is broken into 3 sections - movies and shows, anime movies and shows, and video games.
             <br>The preferred format for the movies and shows that you're about to see are Blu-Ray.
-            <br>The needed seasons for shows will be mentioned on the covers!
+            <br>The needed seasons for shows will be mentioned on the covers, but check for blu-ray versions!
             <br>A majority of Blu-Ray movies also provide Digital Codes, which never hurt!
             <br>For the anime categories, triple check they say "English Dubbed"!
-            <br>So, check for the "Blu-Ray & Digital" and "English/Dubbed" versions!
+            <br>Also look around for price differences. (Sentai Filmworks, Rightstufanime, Amazon)
+            <br>So, check for the "Blu-Ray (& sometimes Digital)" and "English/Dubbed" versions!
+            <br>For the anime "Fairy Tail" only get "Blu-Ray Collections" NOT "Parts"
             <br>Please don't feel obligated to purchase these if they're too costly!
             <br>Because either way, I'll appreciate any gift!
             <br>Thanks in advance!
@@ -386,9 +389,7 @@
             <h1>Disney Movies</h1>
         </div>
         <div class="container-slides-2">
-            <div class="carousel-cell">
-                <img src="images/entertainment/beautyandbeast.jpg">
-            </div>
+            <!-- These are listed out in carousel.js file -->
             <div class="carousel-cell">
                 <img src="images/entertainment/inside-out.webp">
             </div>
@@ -420,8 +421,15 @@
                 <img src="images/entertainment/little-mermaid.jpg">
             </div>
             <div class="carousel-cell">
-                <img src="images/entertainment/guardians1.jpg">
+                <img src="images/entertainment/beautyandbeast.jpg">
             </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/monsters-inc-collection.jpg">
+            </div>
+            <!--? This is commented out because there will be a third movie (3 box set) -->
+            <!-- <div class="carousel-cell">
+                <img src="images/entertainment/guardians1.jpg">
+            </div> -->
             <div class="carousel-cell">
                 <img src="images/entertainment/endgame.jpg">
             </div>
@@ -432,7 +440,10 @@
         <div class="header">
             <h1>Other Animation Studios</h1>
         </div>
-        <div class="container-slides-3">
+        <div class="container-slides-2">
+            <div class="carousel-cell">
+                <img src="images/entertainment/abominable.jpg">
+            </div>
             <div class="carousel-cell">
                 <img src="images/entertainment/croods2.jpg">
             </div>
@@ -488,12 +499,18 @@
         <div class="header">
             <h1>Comedy</h1>
         </div>
-        <div class="container-slides-5">
+        <div class="container-slides-3">
             <div class="carousel-cell">
                 <img src="images/entertainment/ted.jpg">
             </div>
             <div class="carousel-cell">
                 <img src="images/entertainment/gamenight.jpg">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/free-guy.jpg">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/Going-in-Style.jpg">
             </div>
             <div class="carousel-cell">
                 <img src="images/entertainment/upside.jpg">
@@ -506,9 +523,9 @@
             <h1>Suspense</h1>
         </div>
         <div class="container-slides-5">
-            <div class="carousel-cell">
+            <!-- <div class="carousel-cell">
                 <img src="images/entertainment/venom.jpg">
-            </div>
+            </div> -->
             <!-- <div class="carousel-cell">
                     <img src="images/entertainment/expendables.jpg">
                 </div> -->
@@ -518,9 +535,9 @@
             <div class="carousel-cell">
                 <img src="images/entertainment/it.jpeg">
             </div>
-            <div class="carousel-cell">
+            <!-- <div class="carousel-cell">
                 <img src="images/entertainment/zombieland.jpeg">
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -1003,6 +1020,26 @@
                     <img src="images/entertainment/mario-strikers.jpg">
                 </div>
             </div>
+            <div class="carousel-cell-zoom">
+                <div class="img-hover-zoom">
+                    <img src="images/entertainment/super-mario-3D-all-stars.jpg">
+                </div>
+            </div>
+            <div class="carousel-cell-zoom">
+                <div class="img-hover-zoom">
+                    <img src="images/entertainment/mario-odyssey.jpg">
+                </div>
+            </div>
+            <div class="carousel-cell-zoom">
+                <div class="img-hover-zoom">
+                    <img src="images/entertainment/mario-origami.jpg">
+                </div>
+            </div>
+            <div class="carousel-cell-zoom">
+                <div class="img-hover-zoom">
+                    <img src="images/entertainment/ring-fit.png">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1021,6 +1058,32 @@
         </div>
     </section>
 
+    <section class=carousel-wrapper>
+        <div class="header">
+            <h1>Nintendo Switch Games</h1>
+        </div>
+        <div class="container-slides-2">
+            <div class="carousel-cell">
+                <img src="images/entertainment/super-mario-3D-all-stars.jpg">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/ring-fit.png">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/mario-odyssey.jpg">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/mario-origami.jpg">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/super-smash-bros-ultimate.jpg">
+            </div>
+            <div class="carousel-cell">
+                <img src="images/entertainment/mario-kart-deluxe-8.jpg">
+            </div>
+        </div>
+    </section>
+
     <footer id=footer-section>
         <div id=footer-wrapper>
             <div id=footer-thanks>
@@ -1035,7 +1098,7 @@
                         <li><a href="#">Entertainment Spotlight</a></li>
                         <li><a href="#">Disney Movies</a></li>
                         <li><a href="#">Nikelodeon Movies</a></li>
-                        <li><a href="#">VUDU Account Purchases</a></li>
+                        <li><a href="#">Comedy Movies</a></li>
                         <li><a href="#">Suspense Movies</a></li>
                         <li><a href="#">Investigation T.V. Shows</a></li>
                     </ul>
@@ -1045,6 +1108,7 @@
                         <li><a href="#">Anime Shows</a></li>
                         <li><a href="#">Video Games Spotlight</a></li>
                         <li><a href="#">GameCube Games</a></li>
+                        <li><a href="#">Switch Games</a></li>
                     </ul>
                     <ul>
                         <li><a href="#">Bedroom</a></li>
@@ -1189,3 +1253,6 @@
 </body>
 
 </html>
+
+<!--! OMMITTED ENTERTAINMENT FROM ABOVE & WHY -->
+<!-- Venom - Because there will probably be a collection pack -->
