@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles/household.css" />
+    <title>Household</title>
+</head>
+
+<body>
+    <header>
+        <nav class="complete-navigation">
+            <div id=title>
+                <h1>Andrew Powers</h1>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <div class="navbar">
+                        <a id=home href="#">Home</a>
+                        <div class="dropdown">
+                            <a><button onclick="myFunction()" class="dropbtn">Browse
+                                    <i class="fa fa-caret-down"></i>
+                                </button></a>
+                            <div id="myDropdown" class="dropdown-content">
+                                <div id=row1 class="all-rows">
+                                    <div id=column-1 class="all-columns">
+                                        <h3>Categories</h3>
+                                        <a href="index.html"><i class="fas fa-film"></i> Entertainment</a>
+                                        <a href="household.html"><i class="fas fa-home"></i> Household</a>
+                                        <a href="#">Music</a>
+                                        <a href="#">Apparel</a>
+                                        <!-- <a href="anime.html">Games</a> -->
+                                        <!-- Games can be added as a different section when more games and consoles are wanted -->
+                                    </div>
+                                    <div id=column-2 class="all-columns">
+                                        <h3>Seasonal</h3>
+                                        <a href="#">Spring/Easter</a>
+                                        <a href="#">Summer/Outdoors/beaches</a>
+                                        <a href="#">Autumn/Halloween/Village</a>
+                                        <a href="#">Winter/Christmas/Village</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="all-options">
+        <a href="bedroom.html">
+            <button id=bedroom-option>
+                <img src="images/household/bedroom-option-2.jpg" alt="">
+                <h1>Bedroom</h1>
+            </button>
+        </a>
+        <!--! Above is a simpler version (better) than below. -->
+        <div id="option-2">
+            <a href="#">
+                <button>
+                    <div>
+                        <img src="images/household/kitchen-option.jpg" alt="">
+                    </div>
+                    <div>
+                        <h1>kitchen</h1>
+                    </div>
+                </button>
+            </a>
+        </div>
+        <div id="option-3">
+            <a href="#">
+                <button>
+                    <div>
+                        <img src="images/household/bathroom-option.jpg" alt="">
+                    </div>
+                    <div>
+                        <h1>Bathroom</h1>
+                    </div>
+                </button>
+            </a>
+        </div>
+        <div id="option-4">
+            <a href="#">
+                <button>
+                    <div>
+                        <img src="images/household/livingroom-option.jpeg" alt="">
+                    </div>
+                    <div>
+                        <h1>Living Room</h1>
+                    </div>
+                </button>
+            </a>
+        </div>
+        <div id="option-5">
+            <a href="#">
+                <button>
+                    <div>
+                        <img src="images/household/decorations-option.jpg" alt="">
+                    </div>
+                    <div>
+                        <h1>Decorations</h1>
+                    </div>
+                </button>
+            </a>
+        </div>
+        <div id="option-6">
+            <a href="#">
+                <button>
+                    <div>
+                        <img src="images/household/repairs-option.jpg" alt="">
+                    </div>
+                    <div>
+                        <h1>Repairs</h1>
+                    </div>
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <footer id=footer-section>
+        <h1>We're going to create a more complete footer once other pages are completed</h1>
+    </footer>
+
+    <script src="javascript/header.js"></script>
+
+    <!-- JQUERY Enabled with this link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="javascript/navbar.js"></script>
+</body>
+
+</html>
