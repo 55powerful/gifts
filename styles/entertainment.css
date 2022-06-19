@@ -1,0 +1,1353 @@
+/*? Setting Variables - NOTE THEY NEED "--" to work*/
+
+:root {
+  /* --body-bg: #000024; */
+  /* --nav-bg: transparent; */
+  /*Background colors could be transparent*/
+  --nav-text: #e40000;
+  --menu-options-text: #f9f7f7;
+  --menu-options-text-hover: #f9f7f7;
+  --column-bg: #000000;
+  --column-headers: #f9f7f7;
+  /*TODO: Insert Columns and column hover here. */
+  --spotlight-bg: #141414;
+  --spotlight-text: #ffffff;
+  --spotlight-carousel-bg: #141414;
+  --movie-title-bg: #f9f7f7;
+  --movie-text: #000000;
+  --movie-grid-bg: #f9f7f7;
+  --show-title-bg: #f9f7f7;
+  --show-text: #f9f7f7;
+  --show-grid-bg: #f9f7f7;
+  --footer-bg: #880027;
+  --footer-text: ;
+  --footer-text-hover: ;
+  --footer-copyright-text: ;
+  --main-color: #c0392b;
+  --body-bg: #141414;
+  --box-bg: #221f1f;
+  --text-color: #ffffff;
+  --space-top: 30px;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Helps with Anchor tags (since we have fixed header) */
+html {
+  scroll-padding-top: 7vh; /*Matches header height*/
+}
+
+body {
+  box-sizing: border-box;
+  /*Takes padding into account*/
+  background-color: var(--body-bg);
+}
+
+/* !TESTING STYLES */
+
+.btn {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  display: inline-flex;
+  position: relative;
+  /* align-items: flex-end; */
+}
+
+.btn-hover::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.btn-hover:hover::before {
+  width: 100%;
+}
+
+.btn i,
+.btn span {
+  z-index: 1;
+}
+
+/* .item-action {
+    margin-top: var(--space-top);
+} */
+
+/* .top-down {
+    transform: translateY(-50px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+} */
+
+/* .delay-6 {
+    transition-delay: 0.6s;
+} */
+
+/* ! END TESTING STYLES */
+
+/*? All Question Buttons */
+
+body.swal2-shown > [aria-hidden="true"] {
+  /* blur setting */
+  transition: 0.01s filter;
+  filter: blur(10px);
+}
+
+/*? End of All quesiton Buttons Blur */
+
+/*? Navigation */
+
+.complete-navigation {
+  display: flex;
+  position: fixed;
+  top: 0;
+  /*Controls Heading height & color*/
+  height: 7vh;
+  /*Viewport height. 1vh = 1%*/
+  width: 100vw;
+  background: var(--nav-bg);
+  z-index: 2;
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.complete-navigation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  /* Default format is top to bottom*/
+}
+
+#title {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+  color: var(--nav-text);
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  /*side by side*/
+  list-style: none;
+  /*removes bullet points*/
+  width: 100%;
+  /*Moves div to 50%*/
+  height: 100%;
+  /*Keeps Div usage at 100%*/
+  justify-content: space-around;
+  /*On menu items*/
+  align-items: center;
+  /*Centers within the div*/
+  margin-left: auto;
+  /*Moves to the far right*/
+}
+
+.nav-links li a {
+  color: var(--menu-options-text);
+  text-decoration: none;
+  /*Removes underline*/
+  font-size: 1.5rem;
+  /*Menu options*/
+}
+
+.navbar {
+  display: flex;
+  overflow: hidden;
+}
+
+.navbar a {
+  display: flex;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--menu-options-text-hover);
+}
+
+/*? Wishlist - btn specifies button */
+
+.nav-links li a .dropbtn {
+  border: none;
+  /*Removes border of button*/
+  outline: none;
+  /*Removes outline of button. Both of these are needed*/
+  color: inherit;
+  /*Needed to keep button color the same*/
+  background-color: inherit;
+  /*Needed to keep button background color*/
+  font: inherit;
+  /*Needed to keep button with same font*/
+}
+
+.nav-links li a .dropbtn i {
+  font-size: 17px;
+}
+
+/*? End of BTN */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  padding: 0.1rem 0 0 0;
+  width: 50%;
+  /* Controls width of all dropdown wdith space of entire page*/
+  right: 0;
+  z-index: 1;
+}
+
+.all-rows {
+  display: flex;
+}
+
+.all-columns {
+  box-sizing: border-box;
+  /*33.33 includes padding and margin*/
+  width: 50%;
+  /*This controls the width of each column in consideration with entire dropdown width space*/
+  padding: 10px;
+  background-color: var(--column-bg);
+}
+
+.all-columns h3 {
+  color: var(--column-headers);
+  margin: 5px 0 10px 0;
+  font-size: 1.35rem;
+}
+
+.all-columns a {
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.all-columns a:hover {
+  background-color: #ddd;
+}
+
+/*? End of Navigation*/
+
+/*? All Spotlight Carousel Sections */
+
+/** Movie Spotlight Carousel */
+
+.movie-section {
+  position: relative;
+}
+
+/** Movie Question Button */
+
+.movie-question-button {
+  position: absolute;
+  top: 97%;
+  left: 1%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  border-radius: 100%;
+  color: rgb(255, 196, 0);
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.movie-question-button:hover {
+  background: rgb(255, 0, 0);
+}
+
+/** End of Movie Question Button */
+
+/** End of Movie Spotlight Carousel */
+
+/** Anime Spotlight Carousel */
+
+.anime-section {
+  position: relative;
+}
+
+/** Anime Question Button */
+
+.anime-question-button {
+  position: absolute;
+  top: 97%;
+  left: 1%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  border-radius: 100%;
+  color: rgb(255, 196, 0);
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.anime-question-button:hover {
+  background: rgb(255, 0, 0);
+}
+
+/** End of Anime Question Button */
+
+/** End of Anime Spotlight Carousel */
+
+/** Game Spotlight Carousel */
+
+.game-section {
+  position: relative;
+}
+
+/** Game Question Button */
+
+.game-question-button {
+  position: absolute;
+  top: 97%;
+  left: 1%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  border-radius: 100%;
+  color: rgb(255, 196, 0);
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.game-question-button:hover {
+  background: rgb(255, 0, 0);
+}
+
+/** End of Game Question Button */
+
+/** End of Game Spotlight Carousel */
+
+/** Literature Spotlight Carousel */
+
+.literature-section {
+  position: relative;
+}
+
+/** Literature Question Button */
+
+.literature-question-button {
+  position: absolute;
+  top: 97%;
+  left: 1%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  border-radius: 100%;
+  color: rgb(255, 196, 0);
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.literature-question-button:hover {
+  background: rgb(255, 0, 0);
+}
+
+/** End of Literature Question Button */
+
+/** End of Literature Spotlight Carousel */
+
+.hero-slide-item {
+  padding-top: 39.75%;
+  /*This will change the amoount of space for big carousel*/
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide-item img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-slide-item-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  display: flex;
+}
+
+.item-content-wraper {
+  padding-left: 5rem;
+  width: 40%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.item-content-wraper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.item-content-title {
+  font-size: 5rem;
+  line-height: 5rem;
+  font-weight: 900;
+}
+
+.movie-infos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: calc(var(--space-top) / 2);
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.movie-info span {
+  margin-left: 5px;
+}
+
+.movie-info i {
+  color: var(--main-color);
+}
+
+.movie-info ~ .movie-info {
+  margin-left: 5px;
+}
+
+.item-content-description {
+  font-size: 1.15rem;
+  margin-top: var(--space-top);
+  line-height: 1.5rem;
+}
+
+.item-action {
+  margin-top: var(--space-top);
+}
+
+/*Purchase Button Size */
+.item-action a {
+  font-size: 150%;
+}
+
+.carousel-nav-center {
+  position: relative;
+}
+
+.carousel-nav-center .owl-nav button i {
+  font-size: 3rem;
+}
+
+.carousel-nav-center .owl-nav button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-nav-center .owl-nav .owl-prev {
+  position: absolute;
+  left: 5px;
+}
+
+.carousel-nav-center .owl-nav .owl-next {
+  position: absolute;
+  right: 5px;
+}
+
+.owl-nav button {
+  border: none;
+  outline: none;
+}
+
+.owl-nav button i {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+}
+
+.owl-nav button:hover i {
+  color: var(--main-color);
+}
+
+.top-down {
+  transform: translateY(-50px);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.delay-6 {
+  transition-delay: 0.6s;
+}
+
+.delay-8 {
+  transition-delay: 0.8s;
+}
+
+.owl-item.active .top-down {
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+/*? End of All Spotlight Carousel Sections */
+
+/*? Movie Spotlight Image Zoom */
+
+.container-slides {
+  margin-bottom: 0.25rem;
+  /** This is for underneath the zoom images */
+  background-color: var(--spotlight-carousel-bg);
+  padding: 0 0;
+  /*Adds padding to entire carousel*/
+}
+
+.container-slides img {
+  width: 100%;
+  /*Width of each movie. Will also affect height*/
+  min-height: 100%;
+  /*Stretches to the bottom of the page*/
+}
+
+.carousel-cell-zoom {
+  /*! width = width of movie. padding = padding around each img*/
+  width: 16.671%;
+  /*Space of each movie. So 20% would fit 5 movies within 100% width*/
+  padding: 0 0;
+  /*space is 0 so each of them are touching*/
+  display: flex;
+  /*Side by side*/
+  min-height: 100%;
+  /*Stretches to the bottom of the space*/
+}
+
+.img-hover-zoom {
+  /* height: 300px; */
+  /* [1.1] Set it as per your need */
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+  /*Transition of image for smooth transition*/
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.3);
+  /*Transform the image when hovered*/
+  /* Scale on x,y coordinates. 1 number means the same for both x & y. 1 is the same scale*/
+}
+
+/*? End of Movie Spotlight Image Zoom */
+
+/*? Carousel Wrapper */
+
+/** Header */
+
+.header {
+  text-align: left;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.header h1 {
+  margin: 2.5rem 0 1rem 1rem;
+  padding: 0 0 0 1rem;
+  background-color: var(--spotlight-bg);
+  border-left: 3px solid red;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: var(--spotlight-text);
+  font-size: 2.3rem;
+}
+
+/** End Header */
+
+/** Images */
+
+.carousel-cell {
+  /*! width = space between imgs.*/
+  width: 18%;
+  /*100% width here means 1 movie on the page at a time.*/
+  min-height: 100%;
+  /*Stretches to the bottom of the space. DO NOT CHANGE*/
+}
+
+.carousel-cell img {
+  height: 30rem;
+  /* Increases the movie height */
+  width: 90%;
+  /* 100% width means they all touch together */
+  border-radius: 2%;
+}
+
+/** End of Images */
+
+/** Buttons */
+
+.flickity-prev-next-button {
+  /* width: 30px; */
+  width: 3%;
+  /* height: 30px; */
+  height: 100%;
+  border-radius: 2%;
+  background-color: #00000050;
+}
+
+.flickity-prev-next-button:hover {
+  /* background: #F90; */
+  background-color: #0000009f;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+
+.flickity-prev-next-button.no-svg {
+  color: white;
+}
+
+.flickity-prev-next-button.previous {
+  left: 0px;
+}
+
+.flickity-prev-next-button.next {
+  right: 0px;
+}
+
+/** End of Buttons */
+
+/** Dots */
+
+.flickity-page-dots {
+  top: -5%;
+  right: 5%;
+  width: auto;
+  height: 3%;
+  /*Having this height keeps button div out of the carousel's way*/
+}
+
+.flickity-page-dots .dot {
+  margin: 1px;
+  width: 12px;
+  /* height: 10px; */
+  height: 0px;
+  /* opacity: 1; */
+  /* background: transparent; */
+  border-radius: 0;
+  border: 0.5px solid white;
+}
+
+.flickity-page-dots .dot.is-selected {
+  /* background: red; */
+  border: 0.5px solid red;
+}
+
+/** End of Dots */
+
+/** Button Links on Carousel Movies */
+
+.fa-shopping-cart {
+  padding: 0 0.2rem 0 0;
+  position: absolute;
+  left: 2.5%;
+  top: 1.5%;
+  font-size: 1.25rem;
+  color: rgb(255, 0, 0);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.fa-exclamation-circle {
+  position: absolute;
+  left: 11%;
+  top: 1.5%;
+  font-size: 1.25rem;
+  color: rgb(255, 0, 0);
+  background: transparent;
+  border: none;
+  z-index: 1;
+}
+
+.unavailable {
+  width: 90%;
+  height: 99.15%;
+  background: rgba(0, 0, 0, 0.86);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/** End of Button Links on Carousel Movies */
+
+/*? End of Carousel Wrapper*/
+
+/*? Footer Section */
+
+#footer-section {
+  margin: 2rem 0 0 0;
+  padding: 0 0 1rem 0;
+  background-color: #000000;
+  color: rgb(170, 170, 170);
+}
+
+#footer-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.all-footer-titles {
+  margin: 1rem 0 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#footer-thanks {
+  width: 15%;
+  color: rgb(170, 170, 170);
+}
+
+#footer-thanks-note {
+  margin: 1rem 0 0 0;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  color: #535353;
+}
+
+#footer-links {
+  display: flex;
+}
+
+#footer-links ul {
+  margin: 0 1rem 0 0;
+  list-style: none;
+  line-height: 2.5rem;
+}
+
+#footer-links li a {
+  color: #535353;
+  text-decoration: none;
+}
+
+#footer-links li a:hover {
+  text-decoration: underline;
+  color: #8a8a8a;
+}
+
+#footer-contact-options {
+  line-height: 2.5rem;
+  color: #535353;
+}
+
+#img-social-wrapper {
+  margin-top: 1rem;
+  width: 11%;
+}
+
+#img-social-wrapper img {
+  width: 100%;
+  /* Do not change this width change the img-social-wrapper */
+}
+
+#social-media-icons ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+#social-media-icons ul li {
+  font-size: 30px;
+  margin: 5px 15px;
+}
+
+#social-media-icons ul li a {
+  color: #535353;
+}
+
+#social-media-icons ul li a:hover {
+  color: #8a8a8a;
+}
+
+/*? End of Footer Section */
+
+/*? Media Styles - MAXIMUM WIDTH*/
+
+@media screen and (max-width: 2000px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  #footer-wrapper {
+    /* display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap; */
+    flex-direction: column;
+  }
+
+  #footer-thanks {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  /*? All Spotlight Carousel Sections */
+  /** Movie Question Button */
+  .movie-question-button {
+    top: 95%;
+    left: 2%;
+  }
+  /** Anime Question Button */
+  .anime-question-button {
+    top: 95%;
+    left: 2%;
+  }
+  /** Game Question Button */
+  .game-question-button {
+    top: 95%;
+    left: 2%;
+  }
+  /** Literature Question Button */
+  .literature-question-button {
+    top: 95%;
+    left: 2%;
+  }
+  /*? End of spotlight Carousel Sections */
+  /*? Carousel Wrapper */
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 20%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 25rem;
+    /* Increases the movie height */
+  }
+
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 1200px) {
+  /*? Navigation */
+  #title {
+    font-size: 1.5rem;
+  }
+
+  .nav-links li a {
+    font-size: 1rem;
+  }
+
+  /*? End of Navigation */
+
+  /*? All Spotlight Carousel Sections */
+  /** Movie Question Button */
+  .movie-question-button {
+    font-size: 1.2rem;
+  }
+  /** Anime Question Button */
+  .anime-question-button {
+    font-size: 1.2rem;
+  }
+  /** Game Question Button */
+  .game-question-button {
+    font-size: 1.2rem;
+  }
+  /** Literature Question Button */
+  .literature-question-button {
+    font-size: 1.2rem;
+  }
+  /*? End of spotlight Carousel Sections */
+
+  /*? Movie Spotlight Section */
+  .item-content-wraper {
+    padding-left: 3rem;
+  }
+
+  .item-content-title {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .movie-info {
+    font-size: 0.65rem;
+    font-weight: lighter;
+  }
+
+  .item-content-description {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  /*Purchase Button Size */
+  .item-action a {
+    font-size: 100%;
+  }
+
+  /*? End of Movie Spotlight Section */
+  /*? Carousel Wrapper */
+  .header h1 {
+    padding: 0 0 0 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  /** Buttons */
+  .flickity-prev-next-button {
+    width: 4%;
+  }
+
+  /** End of Buttons */
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 1100px) {
+  /*? Carousel Wrapper */
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 25%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 20rem;
+    /* Increases the movie height */
+  }
+
+  /** Dots */
+  .flickity-page-dots {
+    top: -8%;
+  }
+
+  /** End of Dots */
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 1000px) {
+  /*? Movie Spotlight Section */
+  .item-content-wraper {
+    padding-left: 2rem;
+  }
+
+  .item-content-title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .item-content-description {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+  }
+
+  /*Purchase Button Size */
+  .item-action a {
+    font-size: 75%;
+  }
+
+  /*? End of Movie Spotlight Section */
+  /*? Carousel Wrapper */
+  .header h1 {
+    margin: 2rem 0 1rem 1rem;
+    padding: 0 0 0 0.5rem;
+    font-weight: normal;
+    font-size: 1.25rem;
+  }
+
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 900px) {
+  body.freeze {
+    overflow: hidden;
+  }
+
+  #boxes #dialog {
+    font-size: 10pt;
+    line-height: 1.8rem;
+  }
+
+  header {
+    position: relative;
+    z-index: 5;
+  }
+
+  #title {
+    width: 100%;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #000000;
+    height: 50vh;
+    padding-bottom: 50vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(25px at 105% -5%);
+    -webkit-clip-path: circle(25px at 105% -5%);
+    transition: all 2s ease-out;
+    /*Creates flow out instead of shooting*/
+    pointer-events: none;
+    /*Safety for existing clicks on the page.*/
+    /*While this is open, it cancels clicking on homepage elements.*/
+    overflow-y: scroll;
+    z-index: -1;
+  }
+
+  /*! Java Script Class */
+  .nav-links.open {
+    clip-path: circle(1500px at 90% -10%);
+    -webkit-clip-path: circle(1500px at 90% -10%);
+    pointer-events: all;
+    /*Opens clicking function back up. So, this means*/
+    /*individuals would't be able to click homepage elements while menu open*/
+  }
+
+  /*? Controlling the menu titles after open hamburger.*/
+  .nav-links li {
+    opacity: 0;
+    /*Makes menu items disappear*/
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  .nav-links li a {
+    font-size: 25px;
+  }
+
+  /*! Java Script Class*/
+  li.fade {
+    opacity: 1;
+  }
+
+  .navbar {
+    flex-direction: column;
+    display: inline;
+  }
+
+  .fa {
+    position: relative;
+    z-index: -1;
+  }
+
+  .dropdown-content {
+    padding: 0 0 0 0;
+  }
+
+  .all-rows {
+    flex-direction: column;
+  }
+
+  .all-columns {
+    width: 100%;
+    height: auto;
+  }
+
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    /*Moves menu further left as it gets higher*/
+    top: 50%;
+    /*Puts menu 50% way down from nav, notice position*/
+    transform: translate(-5%, -50%);
+    /*X and Y Coordinates*/
+    /*Moves slightly up and left*/
+    /*z-index: 2;*/
+    /*This would be needed if the header wasn't staying*/
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #e40000;
+    margin: 5px;
+  }
+
+  /*! Java Script Class */
+  .show {
+    display: block;
+  }
+
+  /*? Movie Spotlight Section */
+  .item-content-wraper {
+    padding-left: 2rem;
+  }
+
+  .item-content-title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .item-content-description {
+    display: none;
+  }
+
+  /*? End of Movie Spotlight Section */
+  /*? Carousel Wrapper */
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 30%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 20rem;
+    /* Increases the movie height */
+  }
+
+  /*? End of Carousel Wrapper */
+  /*! Decide whether or not we want to format a footer */
+  footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /*? Navigation */
+  /* .complete-navigation {
+    background-color: #000000;
+  } */
+
+  /*? End of Navigation */
+
+  /*? All Spotlight Carousel Sections */
+  /** Movie Question Button */
+  .movie-question-button {
+    top: 93%;
+    left: 3%;
+    font-size: 0.75rem;
+  }
+  /** Anime Question Button */
+  .anime-question-button {
+    top: 93%;
+    left: 3%;
+    font-size: 0.75rem;
+  }
+  /** Game Question Button */
+  .game-question-button {
+    top: 93%;
+    left: 3%;
+    font-size: 0.75rem;
+  }
+  /** Literature Question Button */
+  .literature-question-button {
+    top: 93%;
+    left: 3%;
+    font-size: 0.75rem;
+  }
+  /*? End of spotlight Carousel Sections */
+
+  /*? Movie Spotlight Section */
+  /**Note: This movie-section margin top is used to keep us seperated from our navigation bar */
+  /* .movie-section {
+    margin-top: 7vh;
+  } */
+
+  .item-content-wraper {
+    padding-left: 2rem;
+  }
+
+  .item-content-title {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
+  /*Purchase Button Size */
+  .item-action a {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 75%;
+    letter-spacing: 0.1rem;
+  }
+  /*? End of Movie Spotlight Section */
+  /*? Carousel Wrapper */
+  .header h1 {
+    margin: 1.5rem 0 1rem 1rem;
+    padding: 0 0 0 0.5rem;
+    font-weight: normal;
+    font-size: 0.9rem;
+  }
+
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 35%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 17rem;
+    /* Increases the movie height */
+  }
+
+  /** Dots */
+  .flickity-page-dots {
+    top: -8%;
+  }
+
+  .flickity-page-dots .dot {
+    width: 8px;
+  }
+
+  /** End of Dots */
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 600px) {
+  /*? Navigation section */
+  #title {
+    font-size: 1rem;
+  }
+
+  .line {
+    width: 25px;
+    height: 2px;
+  }
+
+  /*? End of Navigation Section */
+}
+
+@media screen and (max-width: 500px) {
+  /*? Navigation section */
+  #title {
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .line {
+    width: 20px;
+    height: 1.8px;
+    margin: 3px;
+  }
+
+  /*? End of Navigation Section */
+  /*? Movie Spotlight Section */
+  .movie-info {
+    display: none;
+  }
+
+  /*? End of Movie Spotlight Section */
+  /*? Carousel Wrapper */
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 40%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 15rem;
+    /* Increases the movie height */
+  }
+
+  /** Buttons */
+  .flickity-prev-next-button {
+    width: 5%;
+  }
+
+  /** End of Buttons */
+  /** Dots */
+  .flickity-page-dots {
+    top: -10%;
+  }
+
+  /** End of Dots */
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 400px) {
+  /*? Carousel Wrapper */
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 40%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 12rem;
+    /* Increases the movie height */
+  }
+
+  /** Dots */
+  .flickity-page-dots {
+    top: -12%;
+  }
+
+  .flickity-page-dots .dot {
+    width: 6px;
+  }
+
+  /** End of Dots */
+  /*? End of Carousel Wrapper */
+}
+
+@media screen and (max-width: 300px) {
+  /*? Carousel Wrapper */
+  .carousel-cell {
+    /*! width = space between imgs.*/
+    width: 50%;
+    /*100% width here means 1 movie on the page at a time.*/
+  }
+
+  .carousel-cell img {
+    height: 10rem;
+    /* Increases the movie height */
+  }
+
+  /*? End of Carousel Wrapper */
+}
+
+/*? End of Media Styles - MAXIMUM WIDTH*/
